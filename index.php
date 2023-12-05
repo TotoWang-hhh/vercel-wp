@@ -13,5 +13,18 @@
  */
 define( 'WP_USE_THEMES', true );
 
+<?php
+$file= __DIR__ . '/..'.$_SERVER["PHP_SELF"];
+
+if(file_exists($file))
+{
+   return false;
+}
+else
+{
+    require_once __DIR__ . '/../index.php';
+}
+#echo $_SERVER["PHP_SELF"];
+
 /** Loads the WordPress Environment and Template */
 require __DIR__ . '/wp-blog-header.php';
